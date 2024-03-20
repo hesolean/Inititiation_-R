@@ -1,0 +1,29 @@
+"0","install.packages(""readxl"")"
+"2","WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+"
+"2","Installation du package dans ‘C:/Users/LnD/AppData/Local/R/win-library/4.3’
+(car ‘lib’ n'est pas spécifié)
+"
+"2","essai de l'URL 'https://cran.rstudio.com/bin/windows/contrib/4.3/readxl_1.4.3.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1197222 bytes (1.1 MB)
+"
+"2","downloaded 1.1 MB
+
+"
+"1","le package ‘readxl’ a été décompressé et les sommes MD5 ont été vérifiées avec succés
+"
+"1","
+"
+"1",""
+"1","Les packages binaires téléchargés sont dans
+	C:\Users\LnD\AppData\Local\Temp\RtmpOOlCkK\downloaded_packages"
+"1",""
+"1","
+"
+"0","library(readxl)"
+"0",""
+"0","salaire <- read_excel(""data/mrsd_2022Wages_table1.xlsx"", sheet = ""T1"", range = ""B10:F352"", col_names = c(""SSOC 2020"", ""Occupation"", ""Number Covered"", ""Basic wage_dollard"", ""Gross wage_dollard""))"

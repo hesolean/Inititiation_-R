@@ -1,0 +1,30 @@
+---
+title: "Import_csv"
+format: 
+  html:
+    footer: "Je suis un footer"
+editor: visual
+execute: 
+  echo: true
+  error: true
+  warning: true
+  message: true
+---
+
+# Importez un fichier `csv`
+
+Les données sont disponibles dans le dossier `data`, et sur le site (https://www.data.gouv.fr/fr/datasets/mixite-dans-le-groupe-edf/)
+
+```{r}
+mixite_groupe_edf <- read.csv("data/mixite-dans-le-groupe-edf.csv", sep = ";")
+mixite_groupe_edf[65, 1] <- 65
+# un équivalent : mixite_groupe_edf$tri[65] <- 65
+```
+```{r}
+# avec le nom des colonnes, on ne garde que celles que l'on veut
+mixite_groupe_edf_fr <- mixite_groupe_edf[, c("tri", "annee", "perimetre_juridique", "perimetre_spatial", "indicateur", "valeur_de_l_indicateur", "unite", "methode_de_consolidation")]
+
+# ou la position des colonnes
+# mixite_groupe_edf_fr <- mixite_groupe_edf[, c(1:3, 5, 7, 9, 10, 12)]
+```
+

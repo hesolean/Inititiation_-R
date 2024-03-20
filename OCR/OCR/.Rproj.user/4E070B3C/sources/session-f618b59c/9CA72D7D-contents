@@ -1,0 +1,24 @@
+---
+title: "Import_xls"
+format: html
+editor: visual
+execute: 
+  echo: true
+  error: true
+  warning: true
+  message: true
+---
+
+# Importez un fichier `xls`
+
+Les données sont disponibles dans le dossier `data`, et sur le site (https://stats.mom.gov.sg/Pages/Occupational-Wages-Tables2022.aspx)
+
+```{r}
+install.packages("readxl")
+
+library(readxl)
+
+salaire <- read_excel("data/mrsd_2022Wages_table1.xlsx", sheet = "T1", range = "B10:F352", col_names = c("SSOC 2020", "Occupation", "Number Covered", "Basic wage_dollard", "Gross wage_dollard"))
+salaire_1 <- read_excel("data/mrsd_2022Wages_table1.xlsx", sheet = "T1.1", range = "B10:F290", col_names = c("SSOC 2020", "Occupation", "Number Covered", "Basic wage_dollard", "Gross wage_dollard"))
+salaire_2 <- read_excel("data/mrsd_2022Wages_table1.xlsx", sheet = "T1.2", range = "B10:F275", col_names = c("SSOC 2020", "Occupation", "Number Covered", "Basic wage_dollard", "Gross wage_dollard"))
+```

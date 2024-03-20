@@ -1,0 +1,39 @@
+---
+title: "Premier_script"
+format: html
+editor: visual
+---
+## Introduction
+
+Ceci est un **paragraphe** d'introduction pour prendre en main *Quatro*.
+L'avantage de *Quatro* est de permettre une meilleure ***reproductibilité***, ***réutilisation*** et ***transmission*** du code `R`dans `Rstudio`.
+
+![image de profil](img/photo profil.jpg)
+[Le site de formation OpenClassrooms](https://openclassrooms.com/)
+```{r}
+a=1
+a <- 2
+a * 2
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+3*3
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).

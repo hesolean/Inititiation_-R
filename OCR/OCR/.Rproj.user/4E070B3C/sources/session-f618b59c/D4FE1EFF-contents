@@ -1,0 +1,32 @@
+---
+title: "Web_scraping"
+format: html
+editor: visual
+execute: 
+  echo: true
+  error: true
+  warning: true
+  message: true
+---
+
+# Importez depuis le web
+(https://www.keringfoundation.org/fr/articles/d'egal-a-egale/)
+
+```{r}
+install.packages("rvest")
+library(rvest)
+```
+
+```{r}
+stereotype_genre <- read_html("https://www.keringfoundation.org/fr/articles/d'egal-a-egale/") |>
+html_elements("ul") |>
+html_text()
+stereotype_genre_chiffres_cles <- stereotype_genre[2]
+
+```
+```{r}
+install.packages("magick")
+library(magick)
+logo_oc <- image_read("img/logo_oc.jpeg")
+logo_oc
+```

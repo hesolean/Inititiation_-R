@@ -1,0 +1,5 @@
+"0","stereotype_genre <- read_html(""https://www.keringfoundation.org/fr/articles/d'egal-a-egale/"") |>"
+"0","html_elements(""ul"") |>"
+"0","html_text()"
+"0","stereotype_genre_chiffres_cles <- stereotype_genre[2]"
+"0",""

@@ -1,0 +1,63 @@
+---
+title: "Guide des bonnes pratiques"
+format: html
+editor: visual
+---
+
+## Introduction
+Le but est de partir d'un script vide afin de passer en revue les bonnes pratiques.
+
+**Conseil n° 1** pour éviter les erreurs : Ne pas enregistrer les données dans un fichier .RData à la fermeture d’une session.
+
+Par défaut, les données et l’historique des commandes sont automatiquement enregistrés. Il est déconseillé de laisser ces paramètres par défaut pour les personnes qui débutent, car vous pouvez oublier les modifications déjà réalisées sur les données.
+
+Une bonne pratique : relancer les scripts à chaque ouverture de RStudio afin d’être sûr des modifications réalisées sur les données.
+
+Pour changer ces paramètres, il faut dans  Tools > Global options > General > Basic > Workspace   décocher Restore .RData into workspace at startup et sélectionner Never pour Save workspace to .RData on exit.
+
+**Conseil n° 2** pour éviter les erreurs : Maintenir les packages, R et Rstudio à jour.
+Les packages peuvent être mis à jour dans l’onglet Packages puis en cliquant sur Update ou dans le menu Tools > Check for Package Update . À faire au moins une fois par mois.
+
+Lorsqu’une nouvelle version de R est disponible, il est conseillé de la télécharger dans un nouveau dossier à part (ce qui est fait par défaut). Il n’y a aucun problème à avoir plusieurs versions de R sur son ordinateur, il faut par contre vérifier que la bonne est bien utilisée (premier texte affiché dans la console ou  sessionInfo()   ou  Tools > Global Options > R general > R version   ).
+
+Enfin, RStudio informe quand une nouvelle mise à jour est disponible.
+
+**Conseil n° 3** pour éviter les erreurs : Apprenez à bien gérer Git avec RStudio.  
+
+Pour apprendre à gérer parfaitement Git et RStudio, je vous recommande de lire les ressources :
+
+Utiliser Git avec RStudio du projet  {utilitR}  de l'Insee.
+
+Utiliser GIT avec R de Lino GALIANA, extrait de Travail collaboratif avec R.
+
+L’article Travailler avec Git via RStudio et versionner son code du blog de ThinkR par Elena SALETTE.
+
+**Conseil n° 4** pour éviter les erreurs : Enregistrez régulièrement vos fichiers.
+
+Par défaut, le fichier est enregistré à chaque compilation avec Render , mais c’est mieux d’enregistrer plus souvent.
+
+Par rapport à Git, il est conseillé de faire un commit (enregistrer une version d’un ou plusieurs fichier(s)) avant et après chaque développement. Par exemple, faites un commit avant d'importer vos données dans R et après avoir écrit le code et les avoir importées.
+    
+**Conseil n° 5** pour éviter les erreurs : Attention à la casse.
+R, comme beaucoup de langages de programmation, est sensible à la casse, c’est-à-dire qu’il fait la différence entre majuscule et minuscule. Si vous créez l’objet a puis qu'ensuite vous écrivez A * 2 , R affiche une erreur en vous disant que A est un objet inconnu.
+La bonne pratique est d’utiliser les minuscules et d’écrire en  snake_case  , c’est-à-dire en détachant les mots écrits en minuscules par des underscores.
+
+**Conseil n° 6** pour éviter les erreurs : Utiliser l’autocomplétion pour éviter les fautes de frappe.
+
+Lorsqu’on écrit du code dans RStudio, l’autocomplétion propose la fin d’un mot, d’une fonction, d’un package à partir des premières lettres tapées. L’avantage est de voir dans la fenêtre la définition de l’objet ou un aperçu.
+
+**Conseil n° 7** pour éviter les erreurs : Lisez la page d’aide avant d’utiliser une fonction pour la première fois grâce à la fonctionhelp()  ou l’onglet Help.
+
+    Les pages d’aide sont globalement toutes constituées de la même manière avec le nom de la fonction en haut à gauche et le nom du package la contenant à côté entre crochets (dans la vidéo tutoriel : la page d’aide de la fonction  read.csv  du package  {utils}  ), sa description courte et ses utilisations. Ensuite viennent les définitions des arguments et enfin des exemples d’utilisation.
+
+    Vous pouvez aussi utiliser des vignettes avec la fonctionvignette()  . Les vignettes sont des pages d’aide plus documentées, développées ces dernières années sur des sujets et non une seule fonction, mais pas encore généralisées à l’ensemble des packages.
+    
+    **Conseil n° 8**  pour éviter les erreurs : Il faut lire les messages affichés dans la console.
+
+Lorsque le code est envoyé dans la Console, des messages peuvent s’afficher. Il en existe trois sortes :
+
+    Message d’informationmessage(). Très important à lire et à garder en mémoire, il peut aider à comprendre ce qui se passe dans l’environnement, ou certaines spécificités. Il ne bloque pas le code.
+
+    Message d’attention warning()  . Ce message informe qu’une action a été réalisée. Ce type de message n’arrête pas le code mais il est très important de le lire.
+
+    Message d'erreur error()  . Le code est arrêté et le message vous explique où et pourquoi. Plus ou moins compréhensibles en fonction des personnes qui ont développé les fonctions, ces messages sont le premier pas pour débugger.
